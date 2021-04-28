@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: juanochemyapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: juanochemyapp
+  template:
+    metadata:
+      labels:
+        app: juanochemyapp 
+    spec:
+      containers:
+        - name: juanochemyapp 
+          image: myacr1967.azurecr.io/juanochemyapp
+          ports:
+          - containerPort: 8080
